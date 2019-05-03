@@ -33,15 +33,15 @@
 ## API definition
  - The main information that this system GETS is current BTC price and past BTC closing price.
     
-    [ ] GET currentprice
+   - [ ] GET currentprice
         - https://api.coindesk.com/v1/bpi/currentprice/EUR.json
         
-        [ ] 404 status for "Route not found"
+       - [ ] 404 status for "Route not found"
     
-     [ ] GET close
+   -  [ ] GET close
         - https://api.coindesk.com/v1/bpi/historical/close.json?start=$startdate&end=$enddate
         
-        [ ] 404 status for "Route not found"
+       - [ ] 404 status for "Route not found"
         
  ## UI definition
         
