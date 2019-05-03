@@ -1,4 +1,7 @@
+
 $(document).ready(function() {
+
+
     $("#btn").click(function(){
       $.getJSON("https://api.coindesk.com/v1/bpi/currentprice/EUR.json", function(data) {
         console.log(data);
@@ -7,7 +10,8 @@ $(document).ready(function() {
 
         //get string from datepicker
 
-        var date = new Date($('#dateipt').val());
+        var date = new Date($("#dateipt").datepicker().val() );
+	console.log($('#dateipt').datepicker().val());
         day = date.getDate();
         month = date.getMonth() + 1;
         year = date.getFullYear();
@@ -16,6 +20,7 @@ $(document).ready(function() {
         //hardcode datepicker value for testing
         //TODO: fix datepicker
         var close= "2017-01-02";
+
         console.log(close);
 
         //check if the picked date is valid
@@ -24,18 +29,17 @@ $(document).ready(function() {
           $.getJSON("https://api.coindesk.com/v1/bpi/historical/close.json?start=" + close + "&end=" + close, function(closure) {
             console.log(closure);
             //hardcode close value for testing
-            var closeValue=1;
-            //var closeValue= "closure.bpi[\"\"" +close+ "\"\"]";
-            //console.log(eval(closeValue));
-            //var test= closure.bpi[\201\7-\01-\02];
-            //console.log(test);
-            var revenue= closeValue - value;
-            console.log(revenue);
-            if (revenue < 0) {
-                $('#msg').text("You would have lost " + (-1 * revenue) + " dollars by todays index!")
+            //var closeValue=1;
+
+            var closeValue= "closure.bpi[\"" +close+ "\"]";
+            console.log(eval(closeValue));
+            var revenue= eval(closeValue) - value;
+
+	    if (revenue < 0) {
+                $('#msg').text("You would have lost " + (-1 * revenue) + " dollars by todays index!");
             }
             if (revenue > 0) {
-                $('#msg').text("You would have earned " + (-1 * revenue) + " dollars by todays index!")
+                $('#msg').text("You would have earned " + (revenue) + " dollars by todays index!");
             }
 
           });
