@@ -34,24 +34,24 @@
  - The main information that this system GETS is current BTC price and past BTC closing price.
     
    - [ ] GET currentprice
-        - https://api.coindesk.com/v1/bpi/currentprice/EUR.json
+        - GET https://api.coindesk.com/v1/bpi/currentprice/EUR.json
         
        - [ ] 404 status for "Route not found"
     
    -  [ ] GET close
-        - https://api.coindesk.com/v1/bpi/historical/close.json?start=$startdate&end=$enddate
+        - GET https://api.coindesk.com/v1/bpi/historical/close.json?start=$startdate&end=$enddate
         
        - [ ] 404 status for "Route not found"
        
    - [ ] POST revenue
-        - https://api.mockbase.com/v1/rev
+        - POST https://api.mockbase.com/v1/rev
         
        - [ ] 429 status for "Too many requests, try again later"
     
-   -  [ ] POST deleteRevenue
-        - https://api.mockbase.com/v1/drev
+   -  [ ] DELETE deleteRevenue
+        - DELETE https://api.mockbase.com/v1/drev
         
-       - [ ] 400 status for "No value recorded"
+       - [ ] 400 status for "No value"
         
  ## UI definition
         
