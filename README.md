@@ -42,6 +42,16 @@
         - https://api.coindesk.com/v1/bpi/historical/close.json?start=$startdate&end=$enddate
         
        - [ ] 404 status for "Route not found"
+       
+   - [ ] POST revenue
+        - https://api.mockbase.com/v1/rev
+        
+       - [ ] 429 status for "Too many requests, try again later"
+    
+   -  [ ] POST deleteRevenue
+        - https://api.mockbase.com/v1/drev
+        
+       - [ ] 400 status for "No value recorded"
         
  ## UI definition
         
